@@ -13,9 +13,9 @@ public class Main {
         ZoneId kyiv = ZoneId.of("Europe/Kyiv");
         Event ev1 = new Event("Birthday",
                 LocalDateTime.of(2026, 9, 24, 12, 0),
-                180, kyiv, "General" );
+                200, kyiv, "General" );
         Event ev2 = new Event("Good day",
-                LocalDateTime.of(2026, 3, 25, 15, 0),
+                LocalDateTime.of(2026, 9, 24, 15, 0),
                 180, kyiv, "General" );
         Event ev3 = new Event("Easter",
                 LocalDateTime.of(2026, 4, 7, 10, 0),
@@ -37,5 +37,9 @@ public class Main {
                 LocalDateTime.of(2026, 1, 1, 1, 1),
                         120, kyiv, "General"  )));
         EventLab.notifyAll(events, e -> System.out.println(e.label()+" is notified"));
+EventLab.findConflicts(events);
+       System.out.println(DateTimeLab.toInstant(ev1));
+        System.out.println(DateTimeLab.minutesBetween(ev1, ev2));
+        System.out.println(DateTimeLab.startInZone(ev1, "Asia/Bangkok"));
     }
 }

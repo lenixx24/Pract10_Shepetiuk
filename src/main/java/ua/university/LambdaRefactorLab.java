@@ -14,6 +14,7 @@ public class LambdaRefactorLab {
         });
     }
     public static void sortLambda(List<String> strings){
+
         strings.sort((a, b) -> a.compareTo(b));
     }
     public static void sortMethodRef(List<String> strings){

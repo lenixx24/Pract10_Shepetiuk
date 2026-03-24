@@ -39,4 +39,8 @@ public LocalDateTime getStart(){
     public long getDurationMinutes() {
         return durationMinutes;
     }
+
+    public ZoneId getZone() {
+        return zone;
+    }
 }
