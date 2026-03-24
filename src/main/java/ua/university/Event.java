@@ -22,12 +22,21 @@ public class Event {
     public String label(){
         return title +" ("+track+")";
     }
-
+public LocalDateTime getStart(){
+        return start;
+}
     @Override
     public String toString() {
-        return this.label() + ", " +
-                ", start " + start +
+        return this.label() + ", start " + start +
                 ", duration " + durationMinutes +
                 ", zone " + zone+", end "+end();
+    }
+
+    public String getTrack() {
+        return track;
+    }
+
+    public long getDurationMinutes() {
+        return durationMinutes;
     }
 }
