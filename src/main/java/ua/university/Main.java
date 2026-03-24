@@ -1,17 +1,24 @@
 package ua.university;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+        ZoneId kyiv = ZoneId.of("Europe/Kyiv");
+        Event ev1 = new Event("Birthday",
+                LocalDateTime.of(2026, 9, 24, 12, 0),
+                180, kyiv, "General" );
+        Event ev2 = new Event("Good day",
+                LocalDateTime.of(2026, 3, 25, 15, 0),
+                180, kyiv, "General" );
+        Event ev3 = new Event("Easter",
+                LocalDateTime.of(2026, 4, 7, 10, 0),
+                240, kyiv, "General" );
+        System.out.println("End: "+ev1.end());
+        System.out.println("Label: "+ev2.label());
+        System.out.println(ev3);
     }
 }
